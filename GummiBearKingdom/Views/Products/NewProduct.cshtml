@@ -1,0 +1,24 @@
+﻿@model GummiBearKingdom.Models.Product
+
+@{
+  ViewData["Title"] = "GummiBear Kingdom - Home";
+  Layout = "_Layout";
+}
+
+<h2>Add a new product</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(m => m.Name, "Product Name")
+  @Html.TextBoxFor(m => m.Name)
+
+  @Html.LabelFor(m => m.Cost, "Price")
+  @Html.TextBoxFor(m => m.Cost)
+
+  @Html.LabelFor(m => m.Description, "Description")
+  @Html.TextAreaFor(m => m.Description)
+
+  <input type="submit" value="Add Product" />
+}
+
+@Html.ActionLink("Back", "Index")
