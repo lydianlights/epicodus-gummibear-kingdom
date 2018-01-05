@@ -13,19 +13,19 @@ namespace GummiBearKingdom.Controllers
     {
         private GummiBearKingdomContext db = new GummiBearKingdomContext();
 
-        [HttpGet]
+        [HttpGet, Route("/products/")]
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpGet]
+        [HttpGet, Route("/products/add")]
         public IActionResult NewProduct()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost, Route("/products/add")]
         public IActionResult NewProduct(Product newProduct)
         {
             db.Products.Add(newProduct);

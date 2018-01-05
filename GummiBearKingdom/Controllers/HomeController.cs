@@ -10,7 +10,7 @@ namespace GummiBearKingdom.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpGet]
+        [HttpGet, Route("/")]
         public IActionResult Index()
         {
             return View();
