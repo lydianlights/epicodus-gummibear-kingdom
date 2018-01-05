@@ -1,7 +1,7 @@
 ﻿@model GummiBearKingdom.Models.Product
 
 @{
-  ViewData["Title"] = "GummiBear Kingdom - Home";
+  ViewData["Title"] = "Gummi Kingdom - Add Product";
   Layout = "_Layout";
 }
 
@@ -9,14 +9,20 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(m => m.Name, "Product Name")
-  @Html.TextBoxFor(m => m.Name)
+  <div class="form-group">
+    @Html.LabelFor(m => m.Name, "Product Name")
+    @Html.TextBoxFor(m => m.Name)
+  </div>
 
-  @Html.LabelFor(m => m.Cost, "Price")
-  @Html.TextBoxFor(m => m.Cost)
+  <div class="form-group">
+    @Html.LabelFor(m => m.Cost, "Price")
+    @Html.TextBoxFor(m => m.Cost)
+  </div>
 
-  @Html.LabelFor(m => m.Description, "Description")
-  @Html.TextAreaFor(m => m.Description)
+  <div class="form-group">
+    @Html.LabelFor(m => m.Description, "Description")
+    @Html.TextAreaFor(m => m.Description)
+  </div>
 
   <input type="submit" value="Add Product" />
 }
