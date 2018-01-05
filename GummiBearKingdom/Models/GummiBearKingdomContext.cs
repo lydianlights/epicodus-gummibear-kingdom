@@ -5,6 +5,8 @@ namespace GummiBearKingdom.Models
 {
     public class GummiBearKingdomContext : DbContext
     {
+        public DbSet<Product> Products { get; set; }
+
         public GummiBearKingdomContext() {}
 
 		public GummiBearKingdomContext(DbContextOptions<GummiBearKingdomContext> options)
