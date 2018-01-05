@@ -40,5 +40,14 @@ namespace GummiBearKingdom.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet, Route("/products/{id}/delete")]
+        public IActionResult RemoveProduct(int id)
+        {
+            var productToRemove = new Product { Id = id };
+            db.Products.Remove(productToRemove);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

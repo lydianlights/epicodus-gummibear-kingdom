@@ -9,7 +9,8 @@
 {
   <p>
     @Html.ActionLink(@product.Name, "Details", new { id = product.Id }) -
-    @product.GetCostAsUSD()
+    @product.GetCostAsUSD() 
+    [@Html.ActionLink("Delete", "RemoveProduct", new { id = product.Id })]
   </p>
 }
 
