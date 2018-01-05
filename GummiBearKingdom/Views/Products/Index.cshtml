@@ -5,17 +5,20 @@
   Layout = "_Layout";
 }
 
-@foreach(var product in Model)
+<h2>Products</h2>
+
+@foreach (var product in Model)
 {
   <p>
     @Html.ActionLink(@product.Name, "Details", new { id = product.Id }) -
-    @product.GetCostAsUSD() 
+    @product.GetCostAsUSD()
     [@Html.ActionLink("Delete", "RemoveProduct", new { id = product.Id })]
   </p>
 }
 
-<h2>Products</h2>
+<p>
+  @Html.ActionLink("Add a product", "AddProduct") | 
+  @Html.ActionLink("Remove all products", "RemoveAllProducts")
+</p>
 
-@Html.ActionLink("Add a product", "AddProduct")
-
-@Html.ActionLink("Back", "Index", "Home")
+<p>@Html.ActionLink("Back", "Index", "Home")</p>
