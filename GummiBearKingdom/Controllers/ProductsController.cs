@@ -16,7 +16,8 @@ namespace GummiBearKingdom.Controllers
         [HttpGet, Route("/products/")]
         public IActionResult Index()
         {
-            return View();
+            var model = db.Products.ToList();
+            return View(model);
         }
 
         [HttpGet, Route("/products/add")]

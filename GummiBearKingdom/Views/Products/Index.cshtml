@@ -1,6 +1,13 @@
-﻿@{
+﻿@model IEnumerable<GummiBearKingdom.Models.Product>
+
+@{
   ViewData["Title"] = "Gummi Kingdom - Products";
   Layout = "_Layout";
+}
+
+@foreach(var product in Model)
+{
+    <p>@product.Name - $@String.Format("{0:.00}", product.Cost)</p>
 }
 
 <h2>Products</h2>
