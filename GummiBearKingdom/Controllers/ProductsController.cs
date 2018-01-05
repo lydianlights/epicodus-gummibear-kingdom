@@ -28,13 +28,13 @@ namespace GummiBearKingdom.Controllers
         }
 
         [HttpGet, Route("/products/add")]
-        public IActionResult NewProduct()
+        public IActionResult AddProduct()
         {
             return View();
         }
 
         [HttpPost, Route("/products/add")]
-        public IActionResult NewProduct(Product newProduct)
+        public IActionResult AddProduct(Product newProduct)
         {
             db.Products.Add(newProduct);
             db.SaveChanges();
