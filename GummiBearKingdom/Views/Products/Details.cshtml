@@ -1,0 +1,9 @@
+﻿@model GummiBearKingdom.Models.Product
+
+@{
+    ViewData["Title"] = $"Gummi Kingdom - {Model.Name}";
+    Layout = "_Layout";
+}
+
+<h2>@Model.Name - @Model.GetCostAsUSD()</h2>
+<p>@Model.Description</p>

@@ -7,7 +7,10 @@
 
 @foreach(var product in Model)
 {
-    <p>@product.Name - $@String.Format("{0:.00}", product.Cost)</p>
+  <p>
+    @Html.ActionLink(@product.Name, "Details", new { id = product.Id }) -
+    @product.GetCostAsUSD()
+  </p>
 }
 
 <h2>Products</h2>

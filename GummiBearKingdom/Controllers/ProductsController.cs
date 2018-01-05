@@ -20,6 +20,13 @@ namespace GummiBearKingdom.Controllers
             return View(model);
         }
 
+        [HttpGet, Route("/products/{id}")]
+        public IActionResult Details(int id)
+        {
+            var model = db.Products.Find(id);
+            return View(model);
+        }
+
         [HttpGet, Route("/products/add")]
         public IActionResult NewProduct()
         {

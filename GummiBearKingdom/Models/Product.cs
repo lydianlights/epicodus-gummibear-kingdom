@@ -15,5 +15,10 @@ namespace GummiBearKingdom.Models
         public string Name { get; set; }
         public decimal Cost { get; set; }
         public string Description { get; set; }
+
+        public string GetCostAsUSD()
+        {
+            return $"${String.Format("{0:.00}", Cost)}";
+        }
     }
 }
