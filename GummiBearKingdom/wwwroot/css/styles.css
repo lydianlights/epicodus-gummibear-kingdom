@@ -1,0 +1,29 @@
+﻿* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  background-image: url("../img/gummybg.png");
+  background-position-x: center;
+  background-repeat: repeat;
+}
+
+.page-container {
+  background-color: white;
+  opacity: 0.9;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 0px;
+  padding: 0px 15px 100px;
+  overflow: hidden;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.page-body {
+
+}

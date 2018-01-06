@@ -15,11 +15,11 @@ gulp.task('build', ['sass'], function() {
 gulp.task('sass', ['sass:clean'], function() {
   return gulp.src('Styles/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('./wwwroot/styles'));
+    .pipe(gulp.dest('./wwwroot/css'));
 });
 
 gulp.task('sass:clean', function() {
-    return del(['./wwwroot/styles/*']);
+    return del(['./wwwroot/css/master.css']);
 });
 
 
