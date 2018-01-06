@@ -9,8 +9,14 @@ body {
   background-position-x: center;
   background-repeat: repeat; }
 
+table {
+  width: 100%;
+  text-align: left; }
+
 .btn {
   display: inline-block;
+  margin-left: 7px;
+  margin-right: 7px;
   padding: 10px 20px;
   text-decoration: none;
   color: black;
@@ -83,7 +89,8 @@ body {
 
 .section-header {
   background-color: #c4daff;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 15px; }
   .section-header h2 {
     font-family: "Lobster Two", sans-serif;
     font-size: 55px;
@@ -91,11 +98,11 @@ body {
 
 .text-columns {
   display: flex;
-  margin: 10px 0px; }
+  margin-top: 10px; }
   .text-columns .column {
     display: block;
     background-color: #c4daff;
-    padding: 20px; }
+    padding: 0px 20px; }
     .text-columns .column + .column {
       margin-left: 55px; }
 
@@ -110,3 +117,18 @@ body {
   padding: 20px 40px; }
   .btn-product-list:hover {
     background-color: #bdedb4; }
+
+#inventory-buttons {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center; }
+
+.btn-go {
+  background-color: #d4ffcc; }
+  .btn-go:hover {
+    background-color: #bdedb4; }
+
+.btn-cancel {
+  background-color: #ff9bbb; }
+  .btn-cancel:hover {
+    background-color: #e27c9d; }

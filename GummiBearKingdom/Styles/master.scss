@@ -5,8 +5,12 @@ $main-background-color: rgba(255, 234, 254, 0.95);
 $secondary-background-color: #f1d1fc;
 $accent-background-color: #c4daff;
 
-$button-color: #d4ffcc;
-$button-hover-color: #bdedb4;
+$product-button-color: #d4ffcc;
+$product-button-hover-color: #bdedb4;
+$go-button-color: #d4ffcc;
+$go-button-hover-color: #bdedb4;
+$cancel-button-color: #ff9bbb;
+$cancel-button-hover-color: #e27c9d;
 
 $nav-tab-active-color: #d8b3db;
 $nav-tab-hover-color: #ae73b5;
@@ -36,8 +40,15 @@ body {
   background-repeat: repeat;
 }
 
+table {
+  width: 100%;
+  text-align: left;
+}
+
 .btn {
   display: inline-block;
+  margin-left: 7px;
+  margin-right: 7px;
   padding: 10px 20px;
   text-decoration: none;
   color: black;
@@ -131,6 +142,7 @@ body {
 .section-header {
   background-color: $accent-background-color;
   text-align: center;
+  margin-bottom: 15px;
 
   h2 {
     font-family: $title-font;
@@ -141,12 +153,12 @@ body {
 
 .text-columns {
   display: flex;
-  margin: 10px 0px;
+  margin-top: 10px;
 
   .column {
     display: block;
     background-color: $accent-background-color;
-    padding: 20px;
+    padding: 0px 20px;
 
     & + .column {
       margin-left: 55px;
@@ -160,11 +172,33 @@ body {
   margin-bottom: 30px;
   font-family: $title-font;
   font-size: 60px;
-  background-color: $button-color;
+  background-color: $product-button-color;
   border-radius: 20px;
   padding: 20px 40px;
 
   &:hover {
-    background-color: $button-hover-color;
+    background-color: $product-button-hover-color;
+  }
+}
+
+#inventory-buttons {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.btn-go {
+  background-color: $go-button-color;
+
+  &:hover {
+    background-color: $go-button-hover-color;
+  }
+}
+
+.btn-cancel {
+  background-color: $cancel-button-color;
+
+  &:hover {
+    background-color: $cancel-button-hover-color;
   }
 }

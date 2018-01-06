@@ -14,16 +14,23 @@
   <h2>Our Inventory</h2>
 </div>
 
-@foreach (var product in Model)
-{
-  <p>
-    @Html.ActionLink(@product.Name, "Details", new { id = product.Id }) -
-    @product.GetCostAsUSD()
-    [@Html.ActionLink("Delete", "RemoveProduct", new { id = product.Id })]
-  </p>
-}
+<table id="inventory-table">
+  <tr>
+    <th>Item</th>
+    <th>Price</th>
+    <th>Edit</th>
+  </tr>
+  @foreach (var product in Model)
+  {
+    <tr>
+      <td>@Html.ActionLink(@product.Name, "Details", new { id = product.Id })</td>
+      <td>@product.GetCostAsUSD()</td>
+      <td>[@Html.ActionLink("Delete", "RemoveProduct", new { id = product.Id })]</td>
+    </tr>
+  }
+</table>
 
-<p>
-  @Html.ActionLink("Add a product", "AddProduct") | 
-  @Html.ActionLink("Remove all products", "RemoveAllProducts")
-</p>
+<div id="inventory-buttons">
+  <a href=@Url.Action("AddProduct") class="btn btn-go">Add a product</a>
+  <a href=@Url.Action("RemoveAllProducts") class="btn btn-cancel">Remove all products</a>
+</div>
