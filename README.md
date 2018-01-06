@@ -27,7 +27,9 @@ This app allows an administrator to manage the Gummi Bear Kingdom's product site
 
 ## Known Bugs
 
-{TODO}
+* No input validation.
+* Product list breaks completely if any product values are null.
+* No confirmation when deleting data from database.
 
 ## License
 
