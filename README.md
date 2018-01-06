@@ -14,10 +14,11 @@ This app allows an administrator to manage the Gummi Bear Kingdom's product site
 * Install `.NET Core 1.1`. You can get it  [here](https://github.com/dotnet/core/blob/master/release-notes/download-archives/1.1.4-download.md).
 * An SQL server is required for this project. If you have no SQL server environment on your computer, you can get MAMP [here](https://www.mamp.info/en/downloads/).
 * Configure your server to listen on port 8889 and start it.
-* Open the project directory `GummiBearKingdom.Solution/GummiBearKingdom` using terminal or powershell.
+* Open the main project directory `GummiBearKingdom/GummiBearKingdom` using terminal or powershell.
 * Run `$ dotnet restore` to fetch the project dependencies.
+* Run `$ npm install` to fetch the project node packages.
 * Run `$ dotnet ef database update` to build the project database.
-* The solution file can now be opened and tested in Microsoft Visual Studio.
+* Run `$ dotnet run` to start the server.
 
 ## Technologies Used
 
