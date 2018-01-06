@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Styles\master.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ViewModels\" />
+    <Folder Include="wwwroot\styles\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,5 +25,9 @@
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="gulp build" />
+  </Target>
 
 </Project>
