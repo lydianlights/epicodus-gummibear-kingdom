@@ -156,7 +156,9 @@ form {
     background-color: #e27c9d; }
 
 #details-delete-item-btn {
-  margin-top: 40px; }
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 60px; }
 
 #new-product-form {
   max-width: 500px; }

@@ -237,8 +237,10 @@ form {
   }
 }
 
-#details-delete-item-btn{
-  margin-top: 40px;
+#details-delete-item-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 60px;
 }
 
 #new-product-form {

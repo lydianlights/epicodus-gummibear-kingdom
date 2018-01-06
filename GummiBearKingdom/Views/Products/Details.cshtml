@@ -18,4 +18,6 @@
 <h2>Price: @Model.GetCostAsUSD()</h2>
 <p>@Model.Description</p>
 
-<a href=@Url.Action("RemoveProduct", new { id = Model.Id }) id="details-delete-item-btn" class="btn btn-cancel">Delete Item</a>
+<div id="details-delete-item-btn">
+  <a href=@Url.Action("RemoveProduct", new { id = Model.Id }) class="btn btn-cancel">Delete Item</a>
+</div>
