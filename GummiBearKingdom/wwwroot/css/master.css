@@ -1,13 +1,12 @@
-﻿* {
-  box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css?family=Lobster+Two");
+* {
+  box-sizing: border-box; }
 
 body {
   margin: 0px;
   background-image: url("../img/gummybg.png");
   background-position-x: center;
-  background-repeat: repeat;
-}
+  background-repeat: repeat; }
 
 .page-container {
   background-color: white;
@@ -17,13 +16,10 @@ body {
   margin: auto;
   margin-top: 0px;
   padding: 0px 15px 100px;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 .page-header {
-  text-align: center;
-}
-
-.page-body {
-
-}
+  text-align: center; }
+  .page-header h1 {
+    color: lime;
+    font-family: "Lobster Two", sans-serif; }
