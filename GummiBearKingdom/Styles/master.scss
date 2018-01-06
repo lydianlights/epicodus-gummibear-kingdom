@@ -4,6 +4,7 @@
 $main-background-color: rgba(255, 234, 254, 0.95);
 $secondary-background-color: #f1d1fc;
 $accent-background-color: #c4daff;
+
 $button-color: #d4ffcc;
 $button-hover-color: #bdedb4;
 
@@ -15,6 +16,9 @@ $page-width: 1000px;
 $title-font: "Lobster Two", sans-serif;
 $title-color: black;
 $title-accent-border: 1px solid $title-color;
+
+// Misc
+$dashed-border: 2px dashed black;
 
 * {
   box-sizing: border-box;
@@ -53,7 +57,7 @@ body {
 
 .page-header {
   text-align: center;
-  border-bottom: 2px dashed black;
+  border-bottom: $dashed-border;
 
   .page-title {
     display: inline-block;
@@ -61,6 +65,7 @@ body {
     margin: 50px 0px;
     padding: 30px 40px;
     border-radius: 10px;
+    text-decoration: none;
   }
 
   h1 {
@@ -83,15 +88,43 @@ body {
   padding: 30px 30px;
   /*border-radius: 6px;*/
 
-  .section-header {
-    background-color: $accent-background-color;
-    text-align: center;
+}
 
-    h2 {
-      font-family: $title-font;
-      font-size: 55px;
-      margin: 0px;
+.main-nav {
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: -8px;
+
+  a {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $button-color;
     }
+
+    &:active {
+      background-color: $button-hover-color;
+    }
+
+    &.active {
+      background-color: $button-color;
+    }
+  }
+}
+
+.section-header {
+  background-color: $accent-background-color;
+  text-align: center;
+
+  h2 {
+    font-family: $title-font;
+    font-size: 55px;
+    margin: 0px;
   }
 }
 

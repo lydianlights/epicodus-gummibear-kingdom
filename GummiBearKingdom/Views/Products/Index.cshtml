@@ -5,7 +5,14 @@
   Layout = "_Layout";
 }
 
-<h2>Products</h2>
+<nav class="main-nav">
+  <a href=@Url.Action("Index", "Home")>Home</a>
+  <a class="active">Products</a>
+</nav>
+
+<div class="section-header">
+  <h2>Our Inventory</h2>
+</div>
 
 @foreach (var product in Model)
 {
@@ -20,5 +27,3 @@
   @Html.ActionLink("Add a product", "AddProduct") | 
   @Html.ActionLink("Remove all products", "RemoveAllProducts")
 </p>
-
-<p>@Html.ActionLink("Back", "Index", "Home")</p>

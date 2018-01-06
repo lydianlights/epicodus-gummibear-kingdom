@@ -36,7 +36,8 @@ body {
     background-color: #c4daff;
     margin: 50px 0px;
     padding: 30px 40px;
-    border-radius: 10px; }
+    border-radius: 10px;
+    text-decoration: none; }
   .page-header h1 {
     font-family: "Lobster Two", sans-serif;
     color: black;
@@ -54,13 +55,32 @@ body {
   height: 100%;
   padding: 30px 30px;
   /*border-radius: 6px;*/ }
-  .page-body .section-header {
-    background-color: #c4daff;
-    text-align: center; }
-    .page-body .section-header h2 {
-      font-family: "Lobster Two", sans-serif;
-      font-size: 55px;
-      margin: 0px; }
+
+.main-nav {
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: -8px; }
+  .main-nav a {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold; }
+    .main-nav a:hover {
+      background-color: #d4ffcc; }
+    .main-nav a:active {
+      background-color: #bdedb4; }
+    .main-nav a.active {
+      background-color: #d4ffcc; }
+
+.section-header {
+  background-color: #c4daff;
+  text-align: center; }
+  .section-header h2 {
+    font-family: "Lobster Two", sans-serif;
+    font-size: 55px;
+    margin: 0px; }
 
 .text-columns {
   display: flex;
