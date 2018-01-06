@@ -1,33 +1,126 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
 
+// Colors
+$main-background-color: rgba(255, 234, 254, 0.95);
+$secondary-background-color: #f1d1fc;
+$accent-background-color: #c4daff;
+$button-color: #d4ffcc;
+$button-hover-color: #bdedb4;
+
+// Page
+$background-image: url("../img/gummybg.png");
+$page-width: 1000px;
+
+// Title
+$title-font: "Lobster Two", sans-serif;
+$title-color: black;
+$title-accent-border: 1px solid $title-color;
+
 * {
   box-sizing: border-box;
 }
 
 body {
+  font-family: sans-serif;
   margin: 0px;
-  background-image: url("../img/gummybg.png");
+  background-image: $background-image;
   background-position-x: center;
   background-repeat: repeat;
 }
 
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  background-color: #eee;
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
 .page-container {
-  background-color: white;
-  opacity: 0.9;
+  background-color: $main-background-color;
   width: 100%;
-  max-width: 1000px;
+  max-width: $page-width;
   margin: auto;
   margin-top: 0px;
-  padding: 0px 15px 100px;
+  margin-bottom: 50px;
+  padding: 0px 15px;
   overflow: hidden;
 }
 
 .page-header {
   text-align: center;
+  border-bottom: 2px dashed black;
+
+  .page-title {
+    display: inline-block;
+    background-color: $accent-background-color;
+    margin: 50px 0px;
+    padding: 30px 40px;
+    border-radius: 10px;
+  }
+
   h1 {
-    font-family: "Lobster Two", sans-serif;
+    font-family: $title-font;
+    color: $title-color;
+    font-size: 90px;
+    margin: 0px;
+    padding-bottom: 15px;
+    border-top: $title-accent-border;
+    border-bottom: $title-accent-border;
   }
 }
 
 .page-body {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-background-color;
+  margin: 25px 20px 30px;
+  height: 100%;
+  padding: 30px 30px;
+  /*border-radius: 6px;*/
+
+  .section-header {
+    background-color: $accent-background-color;
+    text-align: center;
+
+    h2 {
+      font-family: $title-font;
+      font-size: 55px;
+      margin: 0px;
+    }
+  }
+}
+
+.text-columns {
+  display: flex;
+  margin: 10px 0px;
+
+  .column {
+    display: block;
+    background-color: $accent-background-color;
+    padding: 20px;
+
+    & + .column {
+      margin-left: 55px;
+    }
+  }
+}
+
+.btn-product-list {
+  align-self: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: $title-font;
+  font-size: 60px;
+  background-color: $button-color;
+  border-radius: 20px;
+  padding: 20px 40px;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
 }

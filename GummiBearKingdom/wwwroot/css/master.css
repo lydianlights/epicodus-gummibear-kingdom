@@ -3,23 +3,83 @@
   box-sizing: border-box; }
 
 body {
+  font-family: sans-serif;
   margin: 0px;
   background-image: url("../img/gummybg.png");
   background-position-x: center;
   background-repeat: repeat; }
 
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  background-color: #eee; }
+  .btn:hover {
+    background-color: #ccc; }
+
 .page-container {
-  background-color: white;
-  opacity: 0.9;
+  background-color: rgba(255, 234, 254, 0.95);
   width: 100%;
   max-width: 1000px;
   margin: auto;
   margin-top: 0px;
-  padding: 0px 15px 100px;
+  margin-bottom: 50px;
+  padding: 0px 15px;
   overflow: hidden; }
 
 .page-header {
-  text-align: center; }
+  text-align: center;
+  border-bottom: 2px dashed black; }
+  .page-header .page-title {
+    display: inline-block;
+    background-color: #c4daff;
+    margin: 50px 0px;
+    padding: 30px 40px;
+    border-radius: 10px; }
   .page-header h1 {
-    color: lime;
-    font-family: "Lobster Two", sans-serif; }
+    font-family: "Lobster Two", sans-serif;
+    color: black;
+    font-size: 90px;
+    margin: 0px;
+    padding-bottom: 15px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black; }
+
+.page-body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1d1fc;
+  margin: 25px 20px 30px;
+  height: 100%;
+  padding: 30px 30px;
+  /*border-radius: 6px;*/ }
+  .page-body .section-header {
+    background-color: #c4daff;
+    text-align: center; }
+    .page-body .section-header h2 {
+      font-family: "Lobster Two", sans-serif;
+      font-size: 55px;
+      margin: 0px; }
+
+.text-columns {
+  display: flex;
+  margin: 10px 0px; }
+  .text-columns .column {
+    display: block;
+    background-color: #c4daff;
+    padding: 20px; }
+    .text-columns .column + .column {
+      margin-left: 55px; }
+
+.btn-product-list {
+  align-self: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Lobster Two", sans-serif;
+  font-size: 60px;
+  background-color: #d4ffcc;
+  border-radius: 20px;
+  padding: 20px 40px; }
+  .btn-product-list:hover {
+    background-color: #bdedb4; }

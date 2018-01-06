@@ -17,3 +17,8 @@ gulp.task('sass', ['sass:clean'], function() {
 gulp.task('sass:clean', function() {
     return del(['./wwwroot/css/master.css']);
 });
+
+// ========== Sass ========== //
+gulp.task('watch', function () {
+  gulp.watch(['./Styles/*.scss'], ['sass']);
+});
