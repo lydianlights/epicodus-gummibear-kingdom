@@ -3,6 +3,9 @@
   Layout = "_Layout";
 }
 
+<nav class="main-nav">
+  <a class="active">Home</a>
+</nav>
 
 <div class="section-header">
   <h2>Welcome!</h2>
@@ -21,4 +24,6 @@
   </div>
 </div>
 
-<a href=@Url.Action("Index", "Products") class="btn btn-product-list">Product List</a>
+<div id="product-list-btn-wrapper">
+  <a href=@Url.Action("Index", "Products") class="btn btn-product-list">Product List</a>
+</div>

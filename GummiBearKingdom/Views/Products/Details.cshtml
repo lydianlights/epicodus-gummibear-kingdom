@@ -5,7 +5,17 @@
     Layout = "_Layout";
 }
 
-<h2>@Model.Name - @Model.GetCostAsUSD()</h2>
+<nav class="main-nav">
+  <a href=@Url.Action("Index", "Home")>Home</a>
+  <a href=@Url.Action("Index", "Products")>Products</a>
+  <a class="active">Details</a>
+</nav>
+
+<div class="section-header">
+  <h2>@Model.Name</h2>
+</div>
+
+<h2>Price: @Model.GetCostAsUSD()</h2>
 <p>@Model.Description</p>
 
-<p>@Html.ActionLink("Back", "Index")</p>
+<a href=@Url.Action("RemoveProduct", new { id = Model.Id }) id="details-delete-item-btn" class="btn btn-cancel">Delete Item</a>
