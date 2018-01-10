@@ -1,6 +1,6 @@
 # Gummi Bear Kingdom Product Site
 
-#### _Code review project for Epicodus C# week 3_
+#### _Code review project for Epicodus .NET week 1_
 
 #### _**By Rane Fields**_
 
