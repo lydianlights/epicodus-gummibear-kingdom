@@ -46,5 +46,17 @@ namespace GummiBearKingdomTests.ModelTests
 
             Assert.AreEqual(5, testReview.Rating);
         }
+
+        [TestMethod]
+        public void SetContentBody_BodyLongerThan255Chars_Truncate()
+        {
+            Review testReview = new Review {
+                ContentBody = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin lacus est, nec euismod nulla scelerisque quis. Donec tincidunt nisl eget turpis scelerisque laoreet. Donec tristique ultricies turpis, a ultrices urna molestie blandit. Vestibulum at erat viverra."
+            };
+
+            string truncatedContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin lacus est, nec euismod nulla scelerisque quis. Donec tincidunt nisl eget turpis scelerisque laoreet. Donec tristique ultricies turpis, a ultrices urna molestie blandit. Vestibulum at";
+
+            Assert.AreEqual(truncatedContent, testReview.ContentBody);
+        }
     }
 }

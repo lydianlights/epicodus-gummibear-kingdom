@@ -11,11 +11,16 @@ namespace GummiBearKingdom.Models
     public class Review
     {
         private int rating;
+        private string contentBody;
 
         [Key]
         public int Id { get; set; }
         public string Author { get; set; }
-        public string ContentBody { get; set; }
+        public string ContentBody
+        {
+            get => contentBody;
+            set => contentBody = value.Length > 255 ? value.Substring(0, 255) : value;
+        }
         public int Rating
         {
             get => rating;
