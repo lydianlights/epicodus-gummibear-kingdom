@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-
+using GummiBearKingdom.Data;
 using GummiBearKingdom.Models;
 
 namespace GummiBearKingdom
@@ -34,7 +34,8 @@ namespace GummiBearKingdom
             services.AddMvc();
             services.AddEntityFrameworkMySql()
                     .AddDbContext<GummiBearKingdomContext>(
-                        options => options.UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
+                        options => options.UseMySql(Configuration["ConnectionStrings:DefaultConnection"])
+                    );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
