@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using GummiBearKingdom.Models;
+using GummiBearKingdom.Data;
 
 namespace GummiBearKingdom.Migrations
 {

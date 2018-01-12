@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using GummiBearKingdom.Models;
+using GummiBearKingdom.Data;
 
 namespace GummiBearKingdom.Migrations
 {
@@ -29,6 +29,22 @@ namespace GummiBearKingdom.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("GummiBearKingdom.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Author");
+
+                    b.Property<string>("ContentBody");
+
+                    b.Property<int>("Rating");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reviews");
                 });
         }
     }

@@ -8,8 +8,8 @@ using GummiBearKingdom.Data;
 namespace GummiBearKingdom.Migrations
 {
     [DbContext(typeof(GummiBearKingdomContext))]
-    [Migration("20180105185240_AddProducts")]
-    partial class AddProducts
+    [Migration("20180112175219_AddReviews")]
+    partial class AddReviews
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,22 @@ namespace GummiBearKingdom.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("GummiBearKingdom.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Author");
+
+                    b.Property<string>("ContentBody");
+
+                    b.Property<int>("Rating");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reviews");
                 });
         }
     }
