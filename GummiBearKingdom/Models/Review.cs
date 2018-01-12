@@ -17,5 +17,20 @@ namespace GummiBearKingdom.Models
         public int Rating { get; set; }
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            Review other = obj as Review;
+            if (other != null)
+            {
+                return this.Id == other.Id;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
     }
 }

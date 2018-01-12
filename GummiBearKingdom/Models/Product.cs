@@ -17,6 +17,21 @@ namespace GummiBearKingdom.Models
         public string Description { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
 
+        public override bool Equals(object obj)
+        {
+            Product other = obj as Product;
+            if (other != null)
+            {
+                return this.Id == other.Id;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
+
         public string GetCostAsUSD()
         {
             return $"${String.Format("{0:.00}", Cost)}";
