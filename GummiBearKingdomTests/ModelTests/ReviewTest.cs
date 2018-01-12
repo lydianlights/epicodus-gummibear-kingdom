@@ -30,5 +30,21 @@ namespace GummiBearKingdomTests.ModelTests
 
             Assert.AreEqual(false, result);
         }
+
+        [TestMethod]
+        public void SetRating_RatingLessThan1_1()
+        {
+            Review testReview = new Review { Rating = -1 };
+
+            Assert.AreEqual(1, testReview.Rating);
+        }
+
+        [TestMethod]
+        public void SetRating_RatingGreaterThan5_10()
+        {
+            Review testReview = new Review { Rating = 10 };
+
+            Assert.AreEqual(5, testReview.Rating);
+        }
     }
 }
