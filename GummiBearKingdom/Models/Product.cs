@@ -36,5 +36,21 @@ namespace GummiBearKingdom.Models
         {
             return $"${String.Format("{0:.00}", Cost)}";
         }
+
+        public decimal GetAverageRating()
+        {
+            decimal total = 0;
+            if (Reviews == null)
+            {
+                return total;
+            }
+
+            foreach (Review review in Reviews)
+            {
+                total += review.Rating;
+            }
+
+            return total / Reviews.Count;
+        }
     }
 }
