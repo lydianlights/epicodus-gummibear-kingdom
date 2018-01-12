@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace GummiBearKingdom.Models
 {
-    [Table("Products")]
+    [Table(Product.TableName)]
     public class Product
     {
+        public const string TableName = "Products";
+
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }

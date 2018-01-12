@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace GummiBearKingdom.Data
     public class EFProductRepo : IDbRepo<Product>
     {
         private GummiBearKingdomContext db;
-        public IQueryable<Product> Data => throw new NotImplementedException();
+        public IQueryable<Product> Data { get => db.Products; }
 
         public EFProductRepo()
         {
@@ -21,24 +22,29 @@ namespace GummiBearKingdom.Data
             this.db = db;
         }
 
-        public Product Save(Product obj)
+        public Product Save(Product product)
         {
-            throw new NotImplementedException();
+            db.Products.Add(product);
+            db.SaveChanges();
+            return product;
         }
 
-        public Product Update(Product obj)
+        public Product Update(Product product)
         {
-            throw new NotImplementedException();
+            db.Entry(product).State = EntityState.Modified;
+            db.SaveChanges();
+            return product;
         }
 
-        public void Delete(Product obj)
+        public void Delete(Product product)
         {
-            throw new NotImplementedException();
+            db.Products.Remove(product);
+            db.SaveChanges();
         }
 
         public void DeleteAll()
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand($"DELETE FROM {Product.TableName}");
         }
     }
 }
