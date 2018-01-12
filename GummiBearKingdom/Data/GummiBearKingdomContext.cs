@@ -11,7 +11,7 @@ namespace GummiBearKingdom.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
 		{
-			options.UseMySql(@"Server=localhost;Port=8889;database=gummibearkingdom;uid=root;pwd=root;");
+			options.UseMySql("server=localhost;port=8889;database=gummibearkingdom;uid=root;pwd=root;");
 		}
     }
 }
