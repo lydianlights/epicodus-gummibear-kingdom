@@ -10,8 +10,8 @@ namespace GummiBearKingdom.Data
     {
         IQueryable<T> Data { get; }
         T Save(T obj);
-        T Edit(T obj);
-        void Remove(T obj);
-        void ClearAll();
+        T Update(T obj);
+        void Delete(T obj);
+        void DeleteAll();
     }
 }

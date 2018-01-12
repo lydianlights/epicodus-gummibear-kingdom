@@ -26,17 +26,17 @@ namespace GummiBearKingdom.Data
             throw new NotImplementedException();
         }
 
-        public Product Edit(Product obj)
+        public Product Update(Product obj)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(Product obj)
+        public void Delete(Product obj)
         {
             throw new NotImplementedException();
         }
 
-        public void ClearAll()
+        public void DeleteAll()
         {
             throw new NotImplementedException();
         }
