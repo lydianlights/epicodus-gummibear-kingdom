@@ -12,14 +12,16 @@ namespace GummiBearKingdom.Controllers
     {
         private IDbRepo<Product> productRepo;
 
-        public ProductsController()
+        public ProductsController(IDbRepo<Product> productRepo = null)
         {
-            productRepo = new EFProductRepo();
-        }
-
-        public ProductsController(IDbRepo<Product> productRepo)
-        {
-            this.productRepo = productRepo;
+            if (productRepo == null)
+            {
+                this.productRepo = new EFProductRepo();
+            }
+            else
+            {
+                this.productRepo = productRepo;
+            }
         }
 
         [HttpGet, Route("/products/")]
