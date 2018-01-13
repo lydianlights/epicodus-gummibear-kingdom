@@ -15,11 +15,11 @@ namespace GummiBearKingdomTests.ControllerTests
     public class HomeControllerTest
     {
         [TestMethod]
-        public void Index_ResultOfGETRoute_ViewResult()
+        public void Index_GETRoute_ViewResult()
         {
             var controller = new HomeController();
 
-            var view = controller.Index();
+            var view = controller.Index() as ViewResult;
 
             Assert.IsInstanceOfType(view, typeof(ViewResult));
         }
