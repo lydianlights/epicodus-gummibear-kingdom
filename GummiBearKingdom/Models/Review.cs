@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace GummiBearKingdom.Models
 {
-    [Table("Reviews")]
+    [Table(TableName)]
     public class Review
     {
+        public const string TableName = "Reviews";
+
         private int rating;
         private string contentBody;
 

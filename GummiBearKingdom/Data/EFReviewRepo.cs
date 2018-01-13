@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace GummiBearKingdom.Data
     public class EFReviewRepo : IDbRepo<Review>
     {
         private GummiBearKingdomContext db;
-        public IQueryable<Review> Data => throw new NotImplementedException();
+        public IQueryable<Review> Data { get => db.Reviews; }
 
         public EFReviewRepo()
         {
@@ -21,24 +22,29 @@ namespace GummiBearKingdom.Data
             this.db = db;
         }
 
-        public Review Save(Review obj)
+        public Review Save(Review review)
         {
-            throw new NotImplementedException();
+            db.Reviews.Add(review);
+            db.SaveChanges();
+            return review;
         }
 
-        public Review Update(Review obj)
+        public Review Update(Review review)
         {
-            throw new NotImplementedException();
+            db.Entry(review).State = EntityState.Modified;
+            db.SaveChanges();
+            return review;
         }
 
-        public void Delete(Review obj)
+        public void Delete(Review review)
         {
-            throw new NotImplementedException();
+            db.Reviews.Remove(review);
+            db.SaveChanges();
         }
 
         public void DeleteAll()
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand($"DELETE FROM {Review.TableName}");
         }
     }
 }

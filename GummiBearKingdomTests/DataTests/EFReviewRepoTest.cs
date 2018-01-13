@@ -9,28 +9,34 @@ using GummiBearKingdom.Models;
 namespace GummiBearKingdomTests.DataTests
 {
     [TestClass]
-    public class EFProductRepoTest : IDisposable
+    public class EFReviewRepoTest : IDisposable
     {
         EFProductRepo testProductRepo = new EFProductRepo(new TestGummiBearKingdomContext());
+        EFReviewRepo testReviewRepo = new EFReviewRepo(new TestGummiBearKingdomContext());
 
         private void LoadTestData()
         {
             Dispose();
-            foreach(Product product in TestData.Products.ToList())
+            foreach (Product product in TestData.Products.ToList())
             {
                 testProductRepo.Save(product);
+            }
+            foreach (Review review in TestData.Reviews.ToList())
+            {
+                testReviewRepo.Save(review);
             }
         }
 
         public void Dispose()
         {
             testProductRepo.DeleteAll();
+            testReviewRepo.DeleteAll();
         }
 
         [TestMethod]
         public void Dispose_DbIsEmptyAtFirst_0Entries()
         {
-            List<Product> entries = testProductRepo.Data.ToList();
+            List<Review> entries = testReviewRepo.Data.ToList();
 
             int result = entries.Count;
 
@@ -41,9 +47,9 @@ namespace GummiBearKingdomTests.DataTests
         public void Save_SavesAllTestData_DataSaved()
         {
             LoadTestData();
-            Product[] testData = TestData.Products;
+            Review[] testData = TestData.Reviews;
 
-            List<Product> dbData = testProductRepo.Data.ToList();
+            List<Review> dbData = testReviewRepo.Data.ToList();
 
             CollectionAssert.AreEqual(testData, dbData);
         }
@@ -53,8 +59,8 @@ namespace GummiBearKingdomTests.DataTests
         {
             LoadTestData();
 
-            testProductRepo.DeleteAll();
-            List<Product> resultData = testProductRepo.Data.ToList();
+            testReviewRepo.DeleteAll();
+            List<Review> resultData = testReviewRepo.Data.ToList();
             int result = resultData.Count;
 
             Assert.AreEqual(0, result);
@@ -65,26 +71,26 @@ namespace GummiBearKingdomTests.DataTests
         public void Update_UpdatesTestDataEntry_EntryUpdated()
         {
             LoadTestData();
-            string newName = "FakeTestName";
-            Product modifiedProduct = TestData.Products[0];
-            modifiedProduct.Name = newName;
+            string newContent = "FakeTestContent";
+            Review modifiedReview = TestData.Reviews[0];
+            modifiedReview.ContentBody = newContent;
 
-            testProductRepo.Update(modifiedProduct);
-            Product resultProduct = testProductRepo.Data.FirstOrDefault(product => product.Id == modifiedProduct.Id);
+            testReviewRepo.Update(modifiedReview);
+            Review resultReview = testReviewRepo.Data.FirstOrDefault(review => review.Id == modifiedReview.Id);
 
-            Assert.AreEqual(newName, resultProduct.Name);
+            Assert.AreEqual(newContent, resultReview.ContentBody);
         }
 
         [TestMethod]
         public void Delete_DeletesATestDataEntry_EntryDeleted()
         {
             LoadTestData();
-            Product deletedProduct = TestData.Products[0];
+            Review deletedReview = TestData.Reviews[0];
 
-            testProductRepo.Delete(deletedProduct);
-            Product resultProduct = testProductRepo.Data.FirstOrDefault(product => product.Id == deletedProduct.Id);
+            testReviewRepo.Delete(deletedReview);
+            Review resultReview = testReviewRepo.Data.FirstOrDefault(review => review.Id == deletedReview.Id);
 
-            Assert.IsNull(resultProduct);
+            Assert.IsNull(resultReview);
         }
     }
 }
