@@ -16,17 +16,17 @@ namespace GummiBearKingdomTests.ControllerTests
     {
         Mock<IDbRepo<Product>> mockProductRepo = new Mock<IDbRepo<Product>>();
 
-        private void LoadTestData()
+        private ProductsController LoadControllerWithTestData()
         {
             mockProductRepo.Setup(m => m.Data).Returns(TestData.Products.AsQueryable());
+            return new ProductsController(mockProductRepo.Object);
         }
 
         [TestMethod]
         public void Index_ViewModelOfGETRoute_AllProducts()
         {
-            LoadTestData();
+            var controller = LoadControllerWithTestData();
             Product[] testData = TestData.Products;
-            var controller = new ProductsController(mockProductRepo.Object);
 
             var view = controller.Index() as ViewResult;
             var model = view.ViewData.Model as List<Product>;
@@ -38,9 +38,8 @@ namespace GummiBearKingdomTests.ControllerTests
         [TestMethod]
         public void Details_ViewModelOfGETRouteWithIdParam_ProductWithThatId()
         {
-            LoadTestData();
+            var controller = LoadControllerWithTestData();
             Product testProduct = TestData.Products[0];
-            var controller = new ProductsController(mockProductRepo.Object);
 
             var view = controller.Details(testProduct.Id) as ViewResult;
             var model = view.ViewData.Model as Product;
