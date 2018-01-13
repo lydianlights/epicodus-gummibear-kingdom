@@ -8,7 +8,7 @@ using System.Text;
 using GummiBearKingdom.Controllers;
 using GummiBearKingdom.Data;
 using GummiBearKingdom.Models;
-using GummiBearKingdom.ViewModels;
+using GummiBearKingdom.ViewModels.Reviews;
 
 namespace GummiBearKingdomTests.ControllerTests
 {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GummiBearKingdom.Data;
 using GummiBearKingdom.Models;
-using GummiBearKingdom.ViewModels;
+using GummiBearKingdom.ViewModels.Reviews;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

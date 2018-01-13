@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GummiBearKingdom.Models;
 
-namespace GummiBearKingdom.ViewModels
+namespace GummiBearKingdom.ViewModels.Reviews
 {
     public class ModelForAddReviewToProduct
     {
