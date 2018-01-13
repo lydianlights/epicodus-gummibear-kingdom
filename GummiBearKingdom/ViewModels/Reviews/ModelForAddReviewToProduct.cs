@@ -6,12 +6,12 @@ using GummiBearKingdom.Models;
 
 namespace GummiBearKingdom.ViewModels
 {
-    public class AddReviewToProductModel
+    public class ModelForAddReviewToProduct
     {
         public Product CurrentProduct { get; }
         public Review NewReview { get; set; } = null;
 
-        public AddReviewToProductModel(Product currentProduct)
+        public ModelForAddReviewToProduct(Product currentProduct)
         {
             CurrentProduct = currentProduct;
         }
