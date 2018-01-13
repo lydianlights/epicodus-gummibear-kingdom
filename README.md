@@ -14,7 +14,7 @@ This app allows an administrator to manage the Gummi Bear Kingdom's product site
 * Install `.NET Core 1.1`. You can get it  [here](https://github.com/dotnet/core/blob/master/release-notes/download-archives/1.1.4-download.md).
 * A mySQL server is required for this project. If you have no mySQL server environment on your computer, you can get MAMP [here](https://www.mamp.info/en/downloads/).
 * Configure your server to listen on port 8889 and start it.
-* Open the main project directory `GummiBearKingdom/GummiBearKingdom` using terminal or powershell.
+* Open the main project directory `./GummiBearKingdom` using terminal or powershell.
 * Run `$ dotnet restore` to fetch the project dependencies.
 * Run `$ npm install` to fetch the project node packages.
 * Run `$ dotnet ef database update --context GummiBearKingdomContext` to build the project database.
@@ -22,12 +22,12 @@ This app allows an administrator to manage the Gummi Bear Kingdom's product site
 
 ## Running Tests
 
-* Open the main project directory `GummiBearKingdom/GummiBearKingdom` using terminal or powershell.
+* Open the main project directory `./GummiBearKingdom` using terminal or powershell.
 * Run `$ dotnet restore` to fetch the project dependencies.
 * Run `$ npm install` to fetch the project node packages.
 * Run `$ dotnet ef database update --context GummiBearKingdomContext` to build the project database.
 * Run `$ dotnet ef database update --context TestGummiBearKingdomContext` to build the test database.
-* Navigate to `../GummiBearKingdomTests`
+* Open the testing directory `./GummiBearKingdomTests`
 * Run `$ dotnet restore` to fetch the test dependencies.
 * Run `$ dotnet test` to start the tests.
 
