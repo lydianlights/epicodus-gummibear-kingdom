@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using GummiBearKingdom.Data;
 using GummiBearKingdom.Models;
 
@@ -34,7 +35,7 @@ namespace GummiBearKingdom.Controllers
         [HttpGet, Route("/products/{id}")]
         public IActionResult Details(int id)
         {
-            Product model = productRepo.Data.FirstOrDefault(product => product.Id == id);
+            Product model = productRepo.Data.Include(product => product.Reviews).FirstOrDefault(product => product.Id == id);
             return View(model);
         }
 

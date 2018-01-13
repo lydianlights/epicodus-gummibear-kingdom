@@ -42,7 +42,7 @@ namespace GummiBearKingdom.Models
         public decimal GetAverageRating()
         {
             decimal total = 0;
-            if (Reviews == null)
+            if (Reviews == null || Reviews.Count == 0)
             {
                 return total;
             }
@@ -53,6 +53,16 @@ namespace GummiBearKingdom.Models
             }
 
             return total / Reviews.Count;
+        }
+
+        public string GetAverageRatingAsString()
+        {
+            decimal average = GetAverageRating();
+            if (average == 0)
+            {
+                return null;
+            }
+            return String.Format("{0:0.0}", average);
         }
     }
 }

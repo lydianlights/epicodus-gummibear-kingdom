@@ -16,7 +16,36 @@
 </div>
 
 <h2>Price: @Model.GetCostAsUSD()</h2>
+<p>
+  Rating: @(Model.GetAverageRatingAsString() != null ? Model.GetAverageRatingAsString() + " / 5" : "No ratings...")
+</p>
 <p>@Model.Description</p>
+
+<div class="section-header">
+  <h3>Reviews</h3>
+</div>
+
+@if (Model.Reviews == null || Model.Reviews.Count == 0)
+{
+    <p>No reviews available...</p>
+}
+
+@foreach(var review in Model.Reviews)
+{
+    <div class="review">
+      <div class="review-header">
+        <div class="review-author">
+          @review.Author
+        </div>
+        <div class="review-rating">
+          @review.Rating / 5
+        </div>
+      </div>
+      <div class="review-body">
+        @review.ContentBody
+      </div>
+    </div>
+}
 
 <div id="details-delete-item-btn">
   <a href=@Url.Action("RemoveProduct", new { id = Model.Id }) class="btn btn-cancel">Delete Item</a>
