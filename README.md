@@ -17,7 +17,7 @@ This app allows an administrator to manage the Gummi Bear Kingdom's product site
 * Open the main project directory `GummiBearKingdom/GummiBearKingdom` using terminal or powershell.
 * Run `$ dotnet restore` to fetch the project dependencies.
 * Run `$ npm install` to fetch the project node packages.
-* Run `$ dotnet ef database update` to build the project database.
+* Run `$ dotnet ef database update --context GummiBearKingdomContext` to build the project database.
 * Run `$ dotnet run` to start the server.
 
 ## Technologies Used
