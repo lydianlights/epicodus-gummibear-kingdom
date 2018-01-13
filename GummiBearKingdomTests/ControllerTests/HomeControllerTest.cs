@@ -15,7 +15,7 @@ namespace GummiBearKingdomTests.ControllerTests
     public class HomeControllerTest
     {
         [TestMethod]
-        public void Index_GETRoute_ReturnsView()
+        public void Index_ResultOfGETRoute_ViewResult()
         {
             var controller = new HomeController();
 
