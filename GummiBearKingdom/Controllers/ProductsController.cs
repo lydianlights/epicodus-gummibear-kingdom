@@ -27,14 +27,14 @@ namespace GummiBearKingdom.Controllers
         [HttpGet, Route("/products/")]
         public IActionResult Index()
         {
-            var model = productRepo.Data.ToList();
+            List<Product> model = productRepo.Data.ToList();
             return View(model);
         }
 
         [HttpGet, Route("/products/{id}")]
         public IActionResult Details(int id)
         {
-            var model = productRepo.Data.FirstOrDefault(product => product.Id == id);
+            Product model = productRepo.Data.FirstOrDefault(product => product.Id == id);
             return View(model);
         }
 
