@@ -14,7 +14,7 @@ namespace GummiBearKingdomTests.ControllerTests
     [TestClass]
     public class ProductsControllerTest
     {
-        Mock<IDbRepo<Product>> mockProductRepo = new Mock<IDbRepo<Product>>();
+        private Mock<IDbRepo<Product>> mockProductRepo = new Mock<IDbRepo<Product>>();
 
         private ProductsController LoadControllerWithTestData()
         {
