@@ -10,19 +10,29 @@ namespace GummiBearKingdom.Controllers
 {
     public class ProductsController : Controller
     {
-        private GummiBearKingdomContext db = new GummiBearKingdomContext();
+        private IDbRepo<Product> productRepo;
+
+        public ProductsController()
+        {
+            productRepo = new EFProductRepo();
+        }
+
+        public ProductsController(IDbRepo<Product> productRepo)
+        {
+            this.productRepo = productRepo;
+        }
 
         [HttpGet, Route("/products/")]
         public IActionResult Index()
         {
-            var model = db.Products.ToList();
+            var model = productRepo.Data.ToList();
             return View(model);
         }
 
         [HttpGet, Route("/products/{id}")]
         public IActionResult Details(int id)
         {
-            var model = db.Products.Find(id);
+            var model = productRepo.Data.FirstOrDefault(product => product.Id == id);
             return View(model);
         }
 
@@ -35,8 +45,7 @@ namespace GummiBearKingdom.Controllers
         [HttpPost, Route("/products/add")]
         public IActionResult AddProduct(Product newProduct)
         {
-            db.Products.Add(newProduct);
-            db.SaveChanges();
+            productRepo.Save(newProduct);
             return RedirectToAction("Index");
         }
 
@@ -44,16 +53,14 @@ namespace GummiBearKingdom.Controllers
         public IActionResult RemoveProduct(int id)
         {
             var productToRemove = new Product { Id = id };
-            db.Products.Remove(productToRemove);
-            db.SaveChanges();
+            productRepo.Delete(productToRemove);
             return RedirectToAction("Index");
         }
 
         [HttpGet, Route("/products/delete-all")]
         public IActionResult RemoveAllProducts()
         {
-            db.Products.RemoveRange(db.Products);
-            db.SaveChanges();
+            productRepo.DeleteAll();
             return RedirectToAction("Index");
         }
     }
