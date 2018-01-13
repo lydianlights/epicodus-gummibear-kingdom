@@ -33,5 +33,13 @@ namespace GummiBearKingdom.Controllers
             AddReviewToProductModel model = new AddReviewToProductModel(currentProduct);
             return View(model);
         }
+
+        [HttpPost, Route("/products/{id}/reviews/add")]
+        public IActionResult AddReviewToProduct(AddReviewToProductModel formResults)
+        {
+            Review newReview = formResults.NewReview;
+            reviewRepo.Save(newReview);
+            return RedirectToAction("Details", "Products", new { id = newReview.ProductId });
+        }
     }
 }
