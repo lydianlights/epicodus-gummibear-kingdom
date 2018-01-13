@@ -54,7 +54,9 @@ form {
     margin-bottom: 3px;
   }
 
-  input, textarea {
+  input,
+  textarea,
+  select {
     display: block;
     width: 100%;
   }
@@ -245,4 +247,11 @@ form {
 
 #new-product-form {
   max-width: 500px;
+}
+
+#new-review-form {
+  max-width: 500px;
+  select[name="NewReview.Rating"] {
+    max-width: 50px;
+  }
 }

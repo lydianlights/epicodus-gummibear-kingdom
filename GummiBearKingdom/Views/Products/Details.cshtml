@@ -1,8 +1,8 @@
 ﻿@model GummiBearKingdom.Models.Product
 
 @{
-    ViewData["Title"] = $"Gummi Kingdom - {Model.Name}";
-    Layout = "_Layout";
+  ViewData["Title"] = $"Gummi Kingdom - {Model.Name}";
+  Layout = "_Layout";
 }
 
 <nav class="main-nav">
@@ -25,26 +25,28 @@
   <h3>Reviews</h3>
 </div>
 
+<a href=@Url.Action("AddReviewToProduct", "Reviews", new { productId = Model.Id }) class="btn btn-go">Add Review</a>
+
 @if (Model.Reviews == null || Model.Reviews.Count == 0)
 {
-    <p>No reviews available...</p>
+  <p>No reviews available...</p>
 }
 
-@foreach(var review in Model.Reviews)
+@foreach (var review in Model.Reviews)
 {
-    <div class="review">
-      <div class="review-header">
-        <div class="review-author">
-          @review.Author
-        </div>
-        <div class="review-rating">
-          @review.Rating / 5
-        </div>
+  <div class="review">
+    <div class="review-header">
+      <div class="review-author">
+        @review.Author
       </div>
-      <div class="review-body">
-        @review.ContentBody
+      <div class="review-rating">
+        @review.Rating / 5
       </div>
     </div>
+    <div class="review-body">
+      @review.ContentBody
+    </div>
+  </div>
 }
 
 <div id="details-delete-item-btn">

@@ -8,8 +8,10 @@ namespace GummiBearKingdom.ViewModels.Reviews
 {
     public class ModelForAddReviewToProduct
     {
-        public Product CurrentProduct { get; }
-        public Review NewReview { get; set; } = null;
+        public Product CurrentProduct { get; } = new Product();
+        public Review NewReview { get; set; } = new Review();
+
+        public ModelForAddReviewToProduct() {}
 
         public ModelForAddReviewToProduct(Product currentProduct)
         {

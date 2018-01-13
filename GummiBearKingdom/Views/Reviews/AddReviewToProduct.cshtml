@@ -1,0 +1,51 @@
+﻿@model GummiBearKingdom.ViewModels.Reviews.ModelForAddReviewToProduct
+
+@{
+  ViewData["Title"] = $"Gummi Kingdom - Add Review";
+  Layout = "_Layout";
+}
+
+<nav class="main-nav">
+  <a href=@Url.Action("Index", "Home")>Home</a>
+  <a href=@Url.Action("Index", "Products")>Products</a>
+  <a href=@Url.Action("Details", "Products", new { id = Model.CurrentProduct.Id })>Details</a>
+  <a class="active">Add Comment</a>
+</nav>
+
+<div class="section-header">
+  <h2>@Model.CurrentProduct.Name</h2>
+</div>
+
+<div id="new-review-form">
+  @{ Model.NewReview.ProductId = Model.CurrentProduct.Id; }
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(m => m.NewReview.ProductId)
+    
+    <div class="form-group">
+      @Html.LabelFor(m => m.NewReview.Author, "Your Name")
+      @Html.TextBoxFor(m => m.NewReview.Author)
+    </div>
+
+    <div class="form-group">
+      @Html.LabelFor(m => m.NewReview.Rating, "Rating")
+      @Html.DropDownListFor(
+        m => m.NewReview.Rating,
+        new SelectList(new List<SelectListItem> {
+          new SelectListItem { Text = "5", Value = "5" },
+          new SelectListItem { Text = "4", Value = "4" },
+          new SelectListItem { Text = "3", Value = "3" },
+          new SelectListItem { Text = "2", Value = "2" },
+          new SelectListItem { Text = "1", Value = "1" },
+        }, "Value", "Text")
+      )
+    </div>
+
+    <div class="form-group">
+      @Html.LabelFor(m => m.NewReview.ContentBody, "Comment")
+      @Html.TextAreaFor(m => m.NewReview.ContentBody)
+    </div>
+
+    <button type="submit" class="btn btn-go">Submit</button>
+  }
+</div>
