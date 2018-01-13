@@ -54,7 +54,7 @@ namespace GummiBearKingdomTests
                 Author = "xXxGummiKingxXx",
                 ContentBody = "These glasses make anyone look 200% more radical",
                 Rating = 5,
-                ProductId = 1
+                ProductId = 4
             },
             new Review {
                 Id = 4,
@@ -82,6 +82,13 @@ namespace GummiBearKingdomTests
                 Author = "UltimateGummiFan92",
                 ContentBody = "Quite good. I appreciate the effort to remain true to canon with this representation of Gummikind, though I give it a 4/5 for slightly incorrect coloring. Everygummi makes mistakes sometimes.",
                 Rating = 4,
+                ProductId = 2
+            },
+            new Review {
+                Id = 8,
+                Author = "LydianLights",
+                ContentBody = "I need another test rating, sooooooo",
+                Rating = 5,
                 ProductId = 2
             },
         };

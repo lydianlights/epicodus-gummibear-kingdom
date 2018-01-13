@@ -183,18 +183,23 @@ form {
   }
 }
 
-.text-columns {
+#main-page-columns {
   display: flex;
   margin-top: 10px;
 
-  .column {
-    display: block;
+  & > div {
     background-color: $accent-background-color;
     padding: 0px 20px;
+  }
 
-    & + .column {
-      margin-left: 55px;
-    }
+  #main-page-text-column {
+
+  }
+
+  #main-page-popular-column {
+    flex-basis: 250px;
+    flex-shrink: 0;
+    margin-left: 20px;
   }
 }
 

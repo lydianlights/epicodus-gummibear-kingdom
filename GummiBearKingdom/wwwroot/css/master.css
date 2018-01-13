@@ -117,15 +117,16 @@ form {
     font-size: 34px;
     margin: 0px; }
 
-.text-columns {
+#main-page-columns {
   display: flex;
   margin-top: 10px; }
-  .text-columns .column {
-    display: block;
+  #main-page-columns > div {
     background-color: #c4daff;
     padding: 0px 20px; }
-    .text-columns .column + .column {
-      margin-left: 55px; }
+  #main-page-columns #main-page-popular-column {
+    flex-basis: 250px;
+    flex-shrink: 0;
+    margin-left: 20px; }
 
 #product-list-btn-wrapper {
   display: flex;
