@@ -35,5 +35,27 @@ namespace GummiBearKingdom.Controllers
                 .ToList();
             return View(model);
         }
+
+        // HACK: Super lazy way of loading the test data into the actual db. REALLY BAD IDEA.
+        // DON'T CALL THIS ROUTE IN TESTS
+        [HttpGet, Route("/load-test-data")]
+        public IActionResult LoadTestData()
+        {
+            EFProductRepo testProductRepo = new EFProductRepo();
+            EFReviewRepo testReviewRepo = new EFReviewRepo();
+            
+            testProductRepo.DeleteAll();
+            testReviewRepo.DeleteAll();
+
+            foreach (Product product in TestData.Products.ToList())
+            {
+                testProductRepo.Save(product);
+            }
+            foreach (Review review in TestData.Reviews.ToList())
+            {
+                testReviewRepo.Save(review);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

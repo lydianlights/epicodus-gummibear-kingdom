@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using GummiBearKingdom.Models;
 
-namespace GummiBearKingdomTests
+namespace GummiBearKingdom.Data
 {
-    internal static class TestData
+    public static class TestData
     {
-        internal static Product[] Products = {
+        public static Product[] Products = {
             new Product {
                 Id = 1,
                 Name = "Gummi Hat",
@@ -34,7 +34,7 @@ namespace GummiBearKingdomTests
             },
         };
 
-        internal static Review[] Reviews = {
+        public static Review[] Reviews = {
             new Review {
                 Id = 1,
                 Author = "xXxGummiKingxXx",
