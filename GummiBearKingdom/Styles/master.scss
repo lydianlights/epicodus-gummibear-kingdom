@@ -175,6 +175,12 @@ form {
     font-size: 55px;
     margin: 0px;
   }
+  
+  h3 {
+    font-family: $title-font;
+    font-size: 34px;
+    margin: 0px;
+  }
 }
 
 .text-columns {
@@ -253,5 +259,21 @@ form {
   max-width: 500px;
   select[name="NewReview.Rating"] {
     max-width: 50px;
+  }
+}
+
+.review {
+  border: 1px solid black;
+  margin: 20px 0px;
+
+  div {
+    padding: 0px 10px;
+  }
+
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    background-color: $accent-background-color;
   }
 }
