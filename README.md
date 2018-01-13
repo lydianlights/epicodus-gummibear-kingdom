@@ -20,6 +20,17 @@ This app allows an administrator to manage the Gummi Bear Kingdom's product site
 * Run `$ dotnet ef database update --context GummiBearKingdomContext` to build the project database.
 * Run `$ dotnet run` to start the server.
 
+## Running Tests
+
+* Open the main project directory `GummiBearKingdom/GummiBearKingdom` using terminal or powershell.
+* Run `$ dotnet restore` to fetch the project dependencies.
+* Run `$ npm install` to fetch the project node packages.
+* Run `$ dotnet ef database update --context GummiBearKingdomContext` to build the project database.
+* Run `$ dotnet ef database update --context TestGummiBearKingdomContext` to build the test database.
+* Navigate to `../GummiBearKingdomTests`
+* Run `$ dotnet restore` to fetch the test dependencies.
+* Run `$ dotnet test` to start the tests.
+
 ## Technologies Used
 
 * This project is powered by [ASP .NET Core v1.1.2](https://docs.microsoft.com/en-us/aspnet/core/).
